@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-start',
   },
-  
+
   input: {
     width: 200,
     height: 44,

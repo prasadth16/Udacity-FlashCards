@@ -20,7 +20,7 @@ class AddNewCard extends Component {
 
   isValidateForm = (question, answer) => {
     console.log('Question and Answer' + question + answer);
-    if (question !== undefined|| answer !== undefined) return true;
+    if (question !== undefined || answer !== undefined) return true;
     else return false;
   };
 
@@ -33,7 +33,6 @@ class AddNewCard extends Component {
       Alert.alert(
         'Required',
         'You Can Keep None Of The Fields Blank. Please Fill in Question And Answer.'
-        
       );
       return;
     }

@@ -1,16 +1,28 @@
-import React, {Component} from 'react';
-import { View, StyleSheet, Text, TouchableOpacity, Platform } from 'react-native'
-import { red, white } from '../utils/colors'
+import React, { Component } from 'react';
+import {
+  View,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  Platform,
+} from 'react-native';
+import { red, white } from '../utils/colors';
 
-
-export default function NewQuestionBTN({buttonCaption,deckId,navigate,onSubmit}){
-          return(
-                        <TouchableOpacity
-                          style={Platform.OS === 'ios' ? styles.iosSubmitBtn : styles.AndroidSubmitBtn}
-                          onPress={()=>onSubmit(navigate, deckId)}>
-                            <Text style={styles.submitBtnText}>{buttonCaption}</Text>
-                        </TouchableOpacity>
-                  )
+export default function NewQuestionBTN({
+  buttonCaption,
+  deckId,
+  navigate,
+  onSubmit,
+}) {
+  return (
+    <TouchableOpacity
+      style={
+        Platform.OS === 'ios' ? styles.iosSubmitBtn : styles.AndroidSubmitBtn
+      }
+      onPress={() => onSubmit(navigate, deckId)}>
+      <Text style={styles.submitBtnText}>{buttonCaption}</Text>
+    </TouchableOpacity>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -39,5 +51,4 @@ const styles = StyleSheet.create({
     fontSize: 22,
     textAlign: 'center',
   },
-  
-})
+});
