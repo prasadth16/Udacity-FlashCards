@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, StyleSheet, Platform } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { getDecks } from '../utils/api';
-import { red, white } from '../utils/colors';
+import { white } from '../utils/colors';
 import SubmitBtn from './DeckSubmit';
 
 class DeckList extends Component {
   state = {
     deckStack: [],
+
   };
 
   getDeckCaption = (deckId, decks) => {
@@ -22,18 +23,21 @@ class DeckList extends Component {
 
   async componentDidMount() {
     const decks = await getDecks();
+    
 
     this.setState({
       deckStack: decks,
     });
+
   }
 
   async componentDidUpdate() {
     const decks = await getDecks();
-
+    
     this.setState({
       deckStack: decks,
     });
+  
   }
 
   onsubmit = (navigation, deckId) =>
